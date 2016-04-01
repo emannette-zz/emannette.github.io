@@ -1,5 +1,5 @@
 .DS_Store
 .git/
 extFiles/
-main.css.map
+*.css.map
 .sass-cache
