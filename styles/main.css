@@ -38,4 +38,18 @@ a:hover, a:focus {
   width: 240px;
   height: 180px; }
 
+.buttonWrap {
+  text-align: center;
+  padding-top: 10px; }
+
+.button {
+  position: relative;
+  top: 20px;
+  width: 100px;
+  height: 25px;
+  border-radius: 20px; }
+
+.section {
+  visibility: hidden; }
+
 /*# sourceMappingURL=main.css.map */
