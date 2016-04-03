@@ -1,0 +1,67 @@
+// transition-delay: .5s;
+
+
+.projects-tab {
+  display: none;
+  position: absolute;
+  bottom: 150px;
+  left: 150px;
+  font-size: 2em;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  background-color: #041c00;
+  height: 0;
+  width: 150px;
+  border-radius: 10px 10px 0 0;
+  padding-top: 5px;
+  z-index: -1;
+  cursor: pointer;
+  &:hover {
+    bottom: 160px;
+  }
+  &:checked {
+    bottom: 400px;
+  }
+  &:checked ~ .projectsContainer {
+    visibility: visible;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    height: 400px;
+    z-index: 0;
+  }
+
+  &:checked ~ .projects-tab-label {
+    transition-delay: .5s;
+    transition-property: all;
+    transition-duration: 1s;
+    transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+    bottom: 380px;
+  }
+}
+
+.projectsContainer {
+  visibility: hidden;
+  width: 100%;
+  height: 0;
+  background-color: #041c00;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  margin: 0;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  z-index: -2;
+}
+
+.projects-tab-label {
+  @extend .projects-tab;
+  visibility: hidden;
+  transition-property: all;
+  transition-duration: 1s;
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
+  display: block;
+  z-index: -1;
+}
