@@ -1,152 +1,81 @@
+@keyframes swing {
+  0% {
+    transform: rotate(-0.95deg); }
+  50% {
+    transform: rotate(0.95deg); }
+  100% {
+    transform: rotate(-0.95deg); } }
 html, body {
   font-family: helvetica neue,helvetica,arial,sans-serif;
   font-weight: 200;
-  transition: 0.2s ease-in-out; }
+  transition: 0.2s ease-in-out 250ms; }
 
 .light-switch {
   position: absolute;
-  left: 0;
-  bottom: 0;
+  display: block;
+  left: 85px;
+  top: 100px;
   opacity: 0;
-  transition: 0.2s ease-in-out; }
-  .light-switch:checked ~ .background {
-    background-color: #cfbb77;
-    transition: 0.2s ease-in-out; }
-  .light-switch:checked ~ .moon {
+  transition: 0s ease-in-out;
+  z-index: -1; }
+  .light-switch:checked ~ .light-switch-label {
+    background-color: #6c6c6c;
+    transition: 0s ease-in-out; }
+  .light-switch:checked ~ .moon-glow ~ .moon {
     visibility: hidden;
-    transition: 0.2s ease-in-out; }
-    .light-switch:checked ~ .moon .moonImg {
-      visibility: hidden;
-      transition: .1s ease-in-out; }
+    transition: .2s ease-in-out; }
+  .light-switch:checked ~ .moon .moonImg {
+    visibility: hidden;
+    transition: .1s ease-in-out; }
   .light-switch:checked ~ .sun {
     visibility: visible;
-    transition: 0.2s ease-in-out; }
-  .light-switch:checked ~ .hill {
-    background-color: #041c00;
-    transition: 0.2s ease-in-out; }
+    transition: .2s ease-in-out; }
+  .light-switch:checked ~ .sun-glow {
+    visibility: visible;
+    transition: .2s ease-in-out; }
   .light-switch:checked ~ .header {
     color: black;
-    transition: 0.2s ease-in-out; }
+    transition: 0.2s ease-in-out 250ms; }
   .light-switch:checked ~ .about {
     visibility: hidden;
-    transition: 0.2s ease-in-out; }
+    transition: 0.2s ease-in-out 250ms; }
   .light-switch:checked ~ .contact {
     color: black;
-    transition: 0.2s ease-in-out; }
+    transition: 0.2s ease-in-out 250ms; }
   .light-switch:checked ~ .profiles {
     visibility: visible;
-    transition: 0.2s ease-in-out; }
+    transition: 0.2s ease-in-out 250ms; }
   .light-switch:checked ~ .projects-tab {
     visibility: visible;
     height: 50px;
     transition-property: all;
+    transition-delay: 550ms;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
   .light-switch:checked ~ .projects-tab-label {
     visibility: visible;
     height: 50px;
     transition-property: all;
+    transition-delay: 550ms;
     transition-duration: .5s;
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
-  .light-switch:checked ~ .light-switch-label {
-    box-shadow: 0 2px 2px #d0b57b;
-    transition: 0.2s ease-in-out; }
-    .light-switch:checked ~ .light-switch-label .switch {
-      box-shadow: 0 10px 10px -5px #e9dbb0, 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 4px #fff4d3, 0 0 0 5px rgba(0, 0, 0, 0.1); }
-      .light-switch:checked ~ .light-switch-label .switch:before {
-        height: 40px;
-        top: 0;
-        line-height: 35px;
-        background: #fff4d3;
-        color: #64bf60;
-        text-shadow: 0 0 3px #38ff2e;
-        transition: 0.2s ease-in-out; }
-      .light-switch:checked ~ .light-switch-label .switch:after {
-        height: 35px;
-        bottom: 5px;
-        line-height: 35px;
-        background: #fffaea;
-        box-shadow: 0 5px 0 #d0b57b;
-        color: #d7bf95;
-        text-shadow: 0 0 0 transparent;
-        transition: 0.2s ease-in-out; }
+  .light-switch:checked ~ .about {
+    visibility: hidden;
+    transition: ease-in-out 550ms; }
 
 .light-switch-label {
   position: absolute;
   display: block;
-  height: 150px;
-  width: 100px;
-  z-index: 1;
-  bottom: 10px;
-  left: 10px;
-  background-color: #fff4d3;
-  border-radius: 10px;
-  transition: 0.2s ease-in-out; }
-  .light-switch-label .switch {
-    cursor: pointer;
-    height: 70px;
-    width: 50px;
-    background: #fffaea;
-    position: absolute;
-    top: 75%;
-    left: 75%;
-    margin: -75px 0 0 -50px;
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 10px 10px -5px rgba(233, 219, 176, 0), 0 0 0 1px rgba(0, 0, 0, 0.1), 0 0 0 4px #fff4d3, 0 0 0 5px rgba(0, 0, 0, 0.1);
-    transition: 0.2s ease-in-out; }
-    .light-switch-label .switch:before {
-      content: 'ON';
-      display: block;
-      position: absolute;
-      height: 30px;
-      text-align: center;
-      line-height: 35px;
-      width: 50px;
-      top: 5px;
-      left: 0;
-      background: #efe0b1;
-      color: #bfa371;
-      border-radius: 5px 5px 0 0;
-      transition: 0.2s ease-in-out; }
-    .light-switch-label .switch:after {
-      content: 'OFF';
-      display: block;
-      position: absolute;
-      height: 35px;
-      text-align: center;
-      line-height: 30px;
-      width: 50px;
-      bottom: 0;
-      left: 0;
-      background: #fff4d3;
-      color: #a4441a;
-      text-shadow: 0 0 3px #ff4e00;
-      border-radius: 0 0 5px 5px;
-      transition: 0.2s ease-in-out; }
-  .light-switch-label .screw {
-    position: absolute;
-    height: 8px;
-    width: 8px;
-    border-radius: 100%;
-    left: 55%;
-    margin-left: -8px;
-    background: #e3d4a5;
-    overflow: hidden;
-    box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.15); }
-    .light-switch-label .screw:before {
-      content: '';
-      display: block;
-      position: absolute;
-      height: 100%;
-      width: 2px;
-      left: 50%;
-      margin-left: -1px;
-      background: rgba(0, 0, 0, 0.2); }
-    .light-switch-label .screw:first-of-type {
-      top: 15px; }
-    .light-switch-label .screw:last-of-type {
-      bottom: 15px; }
+  height: 120px;
+  width: 3px;
+  z-index: 0;
+  top: 100px;
+  left: 85px;
+  background-color: #cdcdcd;
+  transform-origin: center top;
+  animation: swing 3s infinite ease-in-out;
+  transition: 0s ease-in-out;
+  z-index: -1; }
 
 .background {
   position: absolute;
@@ -156,6 +85,6 @@ html, body {
   left: 0;
   background-color: #031528;
   z-index: -3;
-  transition: 0.2s ease-in-out; }
+  transition: 0.2s ease-in-out 250ms; }
 
 /*# sourceMappingURL=experimental.css.map */
