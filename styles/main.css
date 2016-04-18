@@ -1,34 +1,43 @@
 body {
   font-size: 62.5%;
-  background-color: #ebe5c5;
-  color: #000; }
+  background-color: #031528;
+  color: #031528;
+  transition: 2s ease-in-out; }
 
 a {
   -webkit-transition: color 0.175s ease 0.05s;
   -moz-transition: color 0.175s ease 0.05s;
   -o-transition: color 0.175s ease 0.05s;
   transition: color 0.175s ease 0.05s;
-  color: #aaa;
+  color: black;
+  text-decoration: none;
+  display: inline; }
+
+a:visited, a:focus {
+  color: black;
   text-decoration: none; }
 
-a:visited {
-  color: #aaa; }
-
-a:hover, a:focus {
-  color: #777;
+a:hover {
+  color: #d44f4f;
   text-decoration: none; }
 
-.list-set, .list-set li {
+.list-set, .list-set li, .profiles {
   margin: 0;
   padding: 0;
   list-style: none; }
-  .list-set li {
+  .list-set li, .profiles li {
     display: inline-block; }
 
 .header {
-  text-align: center;
+  color: white;
+  position: absolute;
+  text-align: right;
   font-size: 2em;
-  margin: 0 10%; }
+  margin: 0 auto 0 50px;
+  right: 20px; }
+  .header .label {
+    position: relative;
+    bottom: 20px; }
 
 .main-wrap {
   max-width: 1200px;
@@ -45,11 +54,57 @@ a:hover, a:focus {
 .button {
   position: relative;
   top: 20px;
-  width: 100px;
-  height: 25px;
-  border-radius: 20px; }
+  width: 97px;
+  height: 29px;
+  border-radius: 7px;
+  background-color: black;
+  color: white; }
 
-.section {
-  visibility: hidden; }
+.button:hover {
+  background-color: #569feb; }
+
+.contact {
+  position: absolute;
+  margin-left: 900px;
+  visibility: visible;
+  color: white;
+  text-align: right;
+  position: fixed;
+  top: 140px;
+  right: 15px; }
+  .contact li {
+    font-size: 20px;
+    display: block; }
+
+.header {
+  visibility: visible;
+  position: fixed; }
+
+.about {
+  margin-right: 400px;
+  position: fixed;
+  top: 100px;
+  left: 400px;
+  visibility: visible;
+  color: white;
+  transition-delay: 550ms;
+  transition: ease-in-out; }
+  .about h2 {
+    font-size: 50px; }
+  .about p {
+    font-size: 15px; }
+
+.profiles {
+  position: fixed;
+  text-align: right;
+  left: 500px;
+  top: 15px;
+  visibility: hidden;
+  color: black;
+  display: inline-block;
+  font-size: 2em;
+  font-weight: bold; }
+  .profiles li {
+    padding: 10px; }
 
 /*# sourceMappingURL=main.css.map */
