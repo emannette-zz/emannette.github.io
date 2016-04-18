@@ -95,10 +95,10 @@ a:hover {
     font-size: 15px; }
 
 .profiles {
-  position: fixed;
+  position: absolute;
   text-align: right;
-  left: 500px;
-  top: 15px;
+  right: 30px;
+  top: 200px;
   visibility: hidden;
   color: black;
   display: inline-block;
@@ -106,5 +106,9 @@ a:hover {
   font-weight: bold; }
   .profiles li {
     padding: 10px; }
+
+.profile-image {
+  height: 50px;
+  width: 50px; }
 
 /*# sourceMappingURL=main.css.map */
