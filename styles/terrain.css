@@ -1,0 +1,56 @@
+.moon, .moon-glow {
+  z-index: 0;
+  position: absolute;
+  visibility: visible;
+  border-radius: 120px;
+  top: 35px;
+  left: 60px;
+  width: 150px;
+  height: 150px; }
+
+.moonImg {
+  position: absolute;
+  visibility: visible;
+  height: 270px;
+  width: 270px;
+  top: -55px;
+  left: -63px;
+  margin: 0; }
+
+.sun, .sun-glow {
+  position: absolute;
+  border-radius: 120px;
+  top: 35px;
+  left: 60px;
+  width: 150px;
+  height: 150px;
+  visibility: hidden;
+  background-color: #feffcd; }
+
+.sun-glow {
+  box-shadow: 0 0 190px 20px white, 0 0 300px #cfbb77;
+  z-index: -1; }
+
+.moon-glow {
+  box-shadow: 0 0 190px 20px white, 0 0 300px #010a13;
+  z-index: -1;
+  opacity: 0.2; }
+
+.grass {
+  visibility: visible;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -2;
+  transition: 1s ease-in-out;
+  overflow: hidden; }
+
+.roots {
+  position: absolute;
+  bottom: -400px;
+  left: 0;
+  transform: scaleY(-1);
+  transition: 1s ease-in-out;
+  width: 100%; }
+
+/*# sourceMappingURL=terrain.css.map */
