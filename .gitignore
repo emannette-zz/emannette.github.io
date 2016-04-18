@@ -3,3 +3,4 @@
 extFiles/
 *.css.map
 .sass-cache
+*.todo
