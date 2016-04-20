@@ -66,10 +66,10 @@
     top: -300px;
     transition-duration: 1.7s;
   }
-  &:checked ~ .light-switch-label {
-    top: -300px;
-    transition-duration: 1.7s;
-  }
+  // &:checked ~ .light-switch-label {
+  //   top: -300px;
+  //   transition-duration: 1.7s;
+  // }
   &:checked ~ .roots {
     // visibility: visible;
     transition-duration: 2s;

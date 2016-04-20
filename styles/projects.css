@@ -52,9 +52,6 @@
   .projects-tab:checked ~ .sun-glow, .projects-tab-label:checked ~ .sun-glow {
     top: -300px;
     transition-duration: 1.7s; }
-  .projects-tab:checked ~ .light-switch-label, .projects-tab-label:checked ~ .light-switch-label {
-    top: -300px;
-    transition-duration: 1.7s; }
   .projects-tab:checked ~ .roots, .projects-tab-label:checked ~ .roots {
     transition-duration: 2s;
     transition-timing-function: ease-in-out;
