@@ -1,3 +1,14 @@
+@keyframes reappear {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0.25; }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 0.75; }
+  100% {
+    opacity: 1; } }
 body {
   font-size: 62.5%;
   background-color: #031528;
@@ -9,23 +20,22 @@ a {
   -moz-transition: color 0.175s ease 0.05s;
   -o-transition: color 0.175s ease 0.05s;
   transition: color 0.175s ease 0.05s;
-  color: black;
+  color: white;
   text-decoration: none;
   display: inline; }
 
 a:visited, a:focus {
-  color: black;
   text-decoration: none; }
 
 a:hover {
   color: #d44f4f;
   text-decoration: none; }
 
-.list-set, .list-set li, .profiles {
+.list-set, .list-set li {
   margin: 0;
   padding: 0;
   list-style: none; }
-  .list-set li, .profiles li {
+  .list-set li {
     display: inline-block; }
 
 .header {
@@ -34,7 +44,8 @@ a:hover {
   text-align: right;
   font-size: 2em;
   margin: 0 auto 0 50px;
-  right: 20px; }
+  right: 20px;
+  transition: .2s ease-in-out 500ms; }
   .header .label {
     position: relative;
     bottom: 20px; }
@@ -71,7 +82,8 @@ a:hover {
   text-align: right;
   position: fixed;
   top: 140px;
-  right: 15px; }
+  right: 15px;
+  transition: .2s ease-in-out 500ms; }
   .contact li {
     font-size: 20px;
     display: block; }
@@ -82,33 +94,28 @@ a:hover {
 
 .about {
   margin-right: 400px;
-  position: fixed;
+  position: absolute;
   top: 100px;
   left: 400px;
   visibility: visible;
   color: white;
-  transition-delay: 550ms;
-  transition: ease-in-out; }
+  transition: .2s ease-in-out 500ms;
+  animation: reappear 1.25s linear; }
   .about h2 {
     font-size: 50px; }
   .about p {
     font-size: 15px; }
 
-.profiles {
-  position: absolute;
-  text-align: right;
-  right: 30px;
-  top: 200px;
-  visibility: hidden;
-  color: black;
-  display: inline-block;
-  font-size: 2em;
-  font-weight: bold; }
-  .profiles li {
-    padding: 10px; }
-
 .profile-image {
   height: 50px;
   width: 50px; }
+
+.profiles {
+  position: absolute;
+  right: 30px;
+  top: 200px;
+  transition: .2s linear 500ms; }
+  .profiles span {
+    padding-left: 20px; }
 
 /*# sourceMappingURL=main.css.map */
