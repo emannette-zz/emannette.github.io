@@ -6,33 +6,43 @@ $(document).ready(function(){
     }
   }
 
-  function pullCord() {
-    $('#lightSwitchLabel').animate({height: '150px'}, 300, 'linear').delay(250).animate({height: '120px'}, 300, 'linear');
+  // function pullCord() {
+  //   $('#lightSwitchLabel').animate({height: '150px'}, 300, 'linear').delay(250).animate({height: '120px'}, 300, 'linear');
+  // }
+
+  function fadeSun() {
+    $('#sun').fadeTo(1000, 0);
+    $('#sunGlow').fadeTo(1000, 0);
+  }
+  function opaqueSun() {
+    $('#sun').fadeTo(1000, 1);
+    $('#sunGlow').fadeTo(1000, 1);
   }
 
   $('#moon').click(function() {
-    pullCord();
+    // pullCord();
     $('#lightSwitch').trigger('click');
   });
   $('#sun').click(function() {
-    pullCord();
+    // pullCord();
     $('#lightSwitch').trigger('click');
   });
-  $('#lightSwitchLabel').click(function() {
-    pullCord();
-    $('#lightSwitch').trigger('click');
-  });
+  // $('#lightSwitchLabel').click(function() {
+  //   // pullCord();
+  //   $('#lightSwitch').trigger('click');
+  // });
 
 
   $('#lightSwitch').click(function() {
-    // $('.about').toggle();
-    $('#moon').toggle();
-    $('#moonGlow').toggle();
+    // $('#moon').toggle();
+    // $('#moonGlow').toggle();
     hideProjects();
     if ($('#lightSwitch').is(':checked')) {
       $(document.body).css('background-color', '#63a4e9');
+      opaqueSun();
     } else {
-      $(document.body).css('background-color', '#031528')
+      $(document.body).css('background-color', '#031528');
+      fadeSun();
     }
   });
 
