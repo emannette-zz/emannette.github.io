@@ -1,28 +1,40 @@
-// .light-switch {
-//   &:checked ~ .moon {
-//     box-shadow: 0 0 190px 20px white, 0 0 300px #031528;
-//     background-color: white;
-//   }
-// }
+@keyframes disappear {
+  0%   { opacity: 1   }
+  25%  { opacity: .75 }
+  50%  { opacity: .5  }
+  75%  { opacity: .25 }
+  100% { opacity: 0   }
+}
+@keyframes appear {
+  0%   { opacity: 0   }
+  25%  { opacity: .25 }
+  50%  { opacity: .5  }
+  75%  { opacity: .75 }
+  100% { opacity: 1   }
+}
 
 .moon {
   z-index: 0;
   position: absolute;
-  visibility: visible;
+  // visibility: visible;
   border-radius: 120px;
   top: 35px;
   left: 60px;
   width: 150px;
   height: 150px;
+  // transition: .2s ease-in-out 500ms;
+  animation: appear 1s ease-in-out;
 }
 .moonImg {
   position: absolute;
-  visibility: visible;
+  // visibility: visible;
   height: 270px;
   width: 270px;
   top: -55px;
   left: -63px;
   margin: 0;
+  transition: .2s ease-in-out 500ms;
+  animation: appear 1s ease-in-out;
 }
 .sun {
   // @extend .moon;
@@ -34,11 +46,16 @@
   height: 150px;
   visibility: hidden;
   background-color: #feffcd;
+  z-index: 0;
+  // visibility: hidden;
+  // transition: .2s ease-in-out 500ms;
+  animation: disappear 1s ease-in-out;
 }
 .sun-glow {
   @extend .sun;
   box-shadow: 0 0 190px 20px white, 0 0 300px #cfbb77;
   z-index: -1;
+  // animation: disappear 1s ease-in-out;
 }
 .moon-glow {
   @extend .moon;
