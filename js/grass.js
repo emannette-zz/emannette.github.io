@@ -1,5 +1,5 @@
 (function() {
-  
+
   var canvas = document.getElementById('grass'),
       ctx    = canvas.getContext('2d'),
       stack  = [],
@@ -68,7 +68,7 @@
 
   var cancelAnimation = function() {
     window.cancelAnimationFrame(animation);
-    setTimeout(draw, 550);
+    setTimeout(draw, 500);
   }
 
   sun.addEventListener('click', function() {
