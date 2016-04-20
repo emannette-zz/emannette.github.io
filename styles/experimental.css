@@ -5,10 +5,32 @@
     transform: rotate(0.95deg); }
   100% {
     transform: rotate(-0.95deg); } }
+@keyframes disappear {
+  0% {
+    opacity: 1; }
+  25% {
+    opacity: 0.75; }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 0.25; }
+  100% {
+    opacity: 0; } }
+@keyframes appear {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: 0.25; }
+  50% {
+    opacity: 0.5; }
+  75% {
+    opacity: 0.75; }
+  100% {
+    opacity: 1; } }
 html, body {
   font-family: helvetica neue,helvetica,arial,sans-serif;
   font-weight: 200;
-  transition: 0.2s ease-in-out 250ms; }
+  transition: 0.2s ease-in-out 500ms; }
 
 .light-switch {
   position: absolute;
@@ -18,33 +40,29 @@ html, body {
   opacity: 0;
   transition: 0s ease-in-out;
   z-index: -1; }
-  .light-switch:checked ~ .light-switch-label {
-    background-color: #6c6c6c;
-    transition: 0s ease-in-out; }
-  .light-switch:checked ~ .moon-glow ~ .moon {
+  .light-switch:checked ~ .moon-glow {
     visibility: hidden;
-    transition: .2s ease-in-out; }
-  .light-switch:checked ~ .moon .moonImg {
+    animation: disappear 1s ease-in-out; }
+  .light-switch:checked ~ .moon {
     visibility: hidden;
-    transition: .1s ease-in-out; }
+    animation: disappear 1s ease-in-out; }
+  .light-switch:checked ~ .moonImg {
+    visibility: hidden;
+    animation: disappear 1s ease-in-out; }
   .light-switch:checked ~ .sun {
-    visibility: visible;
-    transition: .2s ease-in-out; }
+    animation: appear 1s ease-in-out; }
   .light-switch:checked ~ .sun-glow {
-    visibility: visible;
-    transition: .2s ease-in-out; }
+    animation: appear 1s ease-in-out; }
   .light-switch:checked ~ .header {
     color: black;
-    transition: 0.2s ease-in-out 250ms; }
+    transition: .2s ease-in-out 500ms; }
   .light-switch:checked ~ .about {
-    visibility: hidden;
-    transition: 0.2s ease-in-out 250ms; }
+    animation: disappear 1.5s linear; }
   .light-switch:checked ~ .contact {
     color: black;
-    transition: 0.2s ease-in-out 250ms; }
+    transition: 0.2s ease-in-out 500ms; }
   .light-switch:checked ~ .profiles {
-    visibility: visible;
-    transition: 0.2s ease-in-out 250ms; }
+    transition: 0.2s ease-in-out 500ms; }
   .light-switch:checked ~ .projects-tab {
     visibility: visible;
     height: 50px;
@@ -61,14 +79,20 @@ html, body {
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
   .light-switch:checked ~ .about {
     visibility: hidden;
-    transition: ease-in-out 550ms; }
+    animation: disappear 1s ease-in-out; }
+  .light-switch:checked ~ .day-profiles {
+    visibility: visible;
+    transition: .2s linear 500ms; }
+  .light-switch:checked ~ .night-profiles {
+    visibility: hidden;
+    transition: .2s linear 500ms; }
 
 .light-switch-label {
   position: absolute;
-  display: block;
+  display: none;
   height: 120px;
   width: 3px;
-  z-index: 0;
+  z-index: -1;
   top: 100px;
   left: 85px;
   background-color: #cdcdcd;
@@ -85,6 +109,6 @@ html, body {
   left: 0;
   background-color: #031528;
   z-index: -3;
-  transition: 0.2s ease-in-out 250ms; }
+  transition: 0.2s ease-in-out 500ms; }
 
 /*# sourceMappingURL=experimental.css.map */

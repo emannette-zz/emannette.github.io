@@ -1,9 +1,23 @@
-$transition: .2s ease-in-out 250ms;
+$transition: .2s ease-in-out 500ms;
 
 @keyframes swing {
-  0%   { transform: rotate(-0.95deg) }
-  50%  { transform: rotate(0.95deg)  }
-  100% { transform: rotate(-0.95deg) }
+  0%   { transform: rotate(-0.95deg); }
+  50%  { transform: rotate(0.95deg );  }
+  100% { transform: rotate(-0.95deg); }
+}
+@keyframes disappear {
+  0%   { opacity: 1   }
+  25%  { opacity: .75 }
+  50%  { opacity: .5  }
+  75%  { opacity: .25 }
+  100% { opacity: 0   }
+}
+@keyframes appear {
+  0%   { opacity: 0   }
+  25%  { opacity: .25 }
+  50%  { opacity: .5  }
+  75%  { opacity: .75 }
+  100% { opacity: 1   }
 }
 
 // *, *:before, *:after {
@@ -24,42 +38,49 @@ html,body {
   opacity: 0;
   transition: 0s ease-in-out;
   z-index: -1;
-  &:checked ~ .light-switch-label {
-    background-color: #6c6c6c;
-    transition: 0s ease-in-out;
-  }
-  &:checked ~ .moon-glow ~ .moon {
+  // &:checked ~ .light-switch-label {
+  //   background-color: #6c6c6c;
+  //   transition: 0s ease-in-out;
+  // }
+  &:checked ~ .moon-glow {
     visibility: hidden;
-    transition: .2s ease-in-out;
+    // transition: .2s ease-in-out 500ms;
+    animation: disappear 1s ease-in-out;
   }
   &:checked ~ .moon {
-    .moonImg {
-      visibility: hidden;
-      transition: .1s ease-in-out;
-    }
+    visibility: hidden;
+    animation: disappear 1s ease-in-out;
+  }
+  &:checked ~ .moonImg {
+    visibility: hidden;
+    // transition: .1s ease-in-out;
+    animation: disappear 1s ease-in-out;
   }
   &:checked ~ .sun {
-    visibility: visible;
-    transition: .2s ease-in-out;
+    // visibility: visible;
+    // transition: .2s ease-in-out 500ms;
+    animation: appear 1s ease-in-out;
   }
   &:checked ~ .sun-glow{
-    visibility: visible;
-    transition: .2s ease-in-out;
+    // visibility: visible;
+    // transition: .2s ease-in-out 500ms;
+    animation: appear 1s ease-in-out;
   }
   &:checked ~ .header {
     color: black;
-    transition: $transition;
+    transition: .2s ease-in-out 500ms;
   }
   &:checked ~ .about {
-    visibility: hidden;
-    transition: $transition;
+    // visibility: hidden;
+    animation: disappear 1.5s linear;
+    // transition: 1.5s ease-in-out 500ms;
   }
   &:checked ~ .contact {
     color: black;
     transition: $transition;
   }
   &:checked ~ .profiles {
-    visibility: visible;
+    // visibility: visible;
     transition: $transition;
   }
   &:checked ~ .projects-tab {
@@ -80,7 +101,16 @@ html,body {
   }
   &:checked ~ .about {
     visibility: hidden;
-    transition: ease-in-out 550ms;
+    animation: disappear 1s ease-in-out;
+    // transition: ease-in-out 550ms;
+  }
+  &:checked ~ .day-profiles {
+    visibility: visible;
+    transition: .2s linear 500ms;
+  }
+  &:checked ~ .night-profiles {
+    visibility: hidden;
+    transition: .2s linear 500ms;
   }
   // &:checked ~ .light-switch-label {
   //   box-shadow: 0 2px 2px #d0b57b;
@@ -112,10 +142,10 @@ html,body {
 
 .light-switch-label {
   position: absolute;
-  display: block;
+  display: none;
   height: 120px;
   width: 3px;
-  z-index: 0;
+  z-index: -1;
   top: 100px;
   left: 85px;
   background-color: #cdcdcd;
