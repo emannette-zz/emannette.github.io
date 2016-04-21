@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-  function hideProjects() {
+  var hideProjects = function() {
     if (!$('#lightSwitch').attr('checked')) {
       $('#projectsTab').prop('checked', false);
     }
@@ -10,14 +10,17 @@ $(document).ready(function(){
   //   $('#lightSwitchLabel').animate({height: '150px'}, 300, 'linear').delay(250).animate({height: '120px'}, 300, 'linear');
   // }
 
-  function fadeSun() {
+  var fadeSun = function() {
     $('#sun').fadeTo(1000, 0);
     $('#sunGlow').fadeTo(1000, 0);
+    $(document.body).css('background-color', '#031528');
   }
-  function opaqueSun() {
+  var opaqueSun = function() {
     $('#sun').fadeTo(1000, 1);
     $('#sunGlow').fadeTo(1000, 1);
+    $(document.body).css('background-color', '#63a4e9');
   }
+
 
   $('#moon').click(function() {
     // pullCord();
@@ -38,10 +41,8 @@ $(document).ready(function(){
     // $('#moonGlow').toggle();
     hideProjects();
     if ($('#lightSwitch').is(':checked')) {
-      $(document.body).css('background-color', '#63a4e9');
       opaqueSun();
     } else {
-      $(document.body).css('background-color', '#031528');
       fadeSun();
     }
   });
@@ -65,9 +66,14 @@ $(document).ready(function(){
   });
 
   $('#projectsTab').click(function() {
-      $('#sun').css('transition-duration', '2s');
-      $('#sunGlow').css('transition-duration', '2s');
-      $('#lightSwitchLabel').css('transition-duration', '2s');
+    $('#sun').css('transition-duration', '2s');
+    $('#sunGlow').css('transition-duration', '2s');
+    $('#lightSwitchLabel').css('transition-duration', '2s');
   });
+
+  (function() {
+    $('#sun').css('opacity', '0');
+    $('#sunGlow').css('opacity', '0');
+  })()
 
 });
