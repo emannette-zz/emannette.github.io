@@ -1,12 +1,8 @@
 @keyframes disappear {
   0% {
     opacity: 1; }
-  25% {
-    opacity: 0.75; }
   50% {
     opacity: 0.5; }
-  75% {
-    opacity: 0.25; }
   100% {
     opacity: 0; } }
 @keyframes appear {
@@ -37,7 +33,6 @@
   top: -55px;
   left: -63px;
   margin: 0;
-  transition: .2s ease-in-out 500ms;
   animation: appear 1s ease-in-out; }
 
 .sun, .sun-glow {
@@ -47,7 +42,6 @@
   left: 60px;
   width: 150px;
   height: 150px;
-  visibility: hidden;
   background-color: #feffcd;
   z-index: 0;
   animation: disappear 1s ease-in-out; }
