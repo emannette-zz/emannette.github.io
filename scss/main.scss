@@ -18,6 +18,7 @@ body {
   background-color: #031528;
   color: #031528;
   transition: 2s ease-in-out;
+  overflow: hidden;
 }
 
 a {
@@ -26,16 +27,24 @@ a {
   text-decoration: none;
   display: inline;
 }
+
 a:visited {
   // color: black;
   text-decoration: none;
 }
+
 a:hover {
   color: #d44f4f;
   text-decoration: none;
 }
+
 a:focus {
   @extend a:visited;
+}
+
+.main-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .list-set {
@@ -62,20 +71,11 @@ a:focus {
   }
 }
 
-.main-wrap {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.screenshot {
-  width: 240px;
-  height: 180px;
-}
-
 .buttonWrap {
   text-align: center;
   padding-top: 10px;
 }
+
 .button {
   position: relative;
   top: 20px;
@@ -85,6 +85,7 @@ a:focus {
   background-color: black;
   color: white;
 }
+
 .button:hover {
   background-color: #569feb;
 }
@@ -95,7 +96,7 @@ a:focus {
   visibility: visible;
   color: white;
   text-align: right;
-  position: fixed;
+  position: absolute;
   top: 140px;
   right: 15px;
   transition: .2s ease-in-out 500ms;
@@ -107,7 +108,7 @@ a:focus {
 
 .header {
   visibility: visible;
-  position: fixed;
+  position: absolute;
 }
 
 .about {
@@ -137,8 +138,15 @@ a:focus {
   position: absolute;
   right: 30px;
   top: 200px;
-  transition: .2s linear 500ms;
+  // transition: .2s linear 500ms;
   span {
     padding-left: 20px;
   }
+}
+
+.day-profiles {
+  animation: disappear 1s ease;
+}
+.night-profiles {
+  animation: appear 1s ease;
 }

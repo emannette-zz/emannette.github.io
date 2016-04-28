@@ -13,7 +13,8 @@ body {
   font-size: 62.5%;
   background-color: #031528;
   color: #031528;
-  transition: 2s ease-in-out; }
+  transition: 2s ease-in-out;
+  overflow: hidden; }
 
 a {
   -webkit-transition: color 0.175s ease 0.05s;
@@ -30,6 +31,10 @@ a:visited, a:focus {
 a:hover {
   color: #d44f4f;
   text-decoration: none; }
+
+.main-wrap {
+  max-width: 1200px;
+  margin: 0 auto; }
 
 .list-set, .list-set li {
   margin: 0;
@@ -49,14 +54,6 @@ a:hover {
   .header .label {
     position: relative;
     bottom: 20px; }
-
-.main-wrap {
-  max-width: 1200px;
-  margin: 0 auto; }
-
-.screenshot {
-  width: 240px;
-  height: 180px; }
 
 .buttonWrap {
   text-align: center;
@@ -80,7 +77,7 @@ a:hover {
   visibility: visible;
   color: white;
   text-align: right;
-  position: fixed;
+  position: absolute;
   top: 140px;
   right: 15px;
   transition: .2s ease-in-out 500ms; }
@@ -90,7 +87,7 @@ a:hover {
 
 .header {
   visibility: visible;
-  position: fixed; }
+  position: absolute; }
 
 .about {
   margin-right: 400px;
@@ -113,9 +110,14 @@ a:hover {
 .profiles {
   position: absolute;
   right: 30px;
-  top: 200px;
-  transition: .2s linear 500ms; }
+  top: 200px; }
   .profiles span {
     padding-left: 20px; }
+
+.day-profiles {
+  animation: disappear 1s ease; }
+
+.night-profiles {
+  animation: appear 1s ease; }
 
 /*# sourceMappingURL=main.css.map */
