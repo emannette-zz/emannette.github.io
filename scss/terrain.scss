@@ -10,9 +10,38 @@
   75%  { opacity: .75 }
   100% { opacity: 1   }
 }
+// @keyframes swing {
+//   0%   { transform: rotate(-5deg); }
+//   50%  { transform: rotate(5deg );  }
+//   100% { transform: rotate(-5deg); }
+// }
+@keyframes grow {
+  0%   { height: 0 }
+  50%  { height: 150px }
+  100% { height: 300px }
+}
+
+.sun {
+  // @extend .moon;
+  animation: disappear 1s ease-in-out;
+  position: absolute;
+  top: 35px;
+  left: 60px;
+  width: 150px;
+  height: 150px;
+  z-index: 10;
+  border-radius: 120px;
+  background-color: #feffcd;
+}
+
+.sun-glow {
+  @extend .sun;
+  box-shadow: 0 0 190px 20px white, 0 0 300px #cfbb77;
+  z-index: -1;
+}
 
 .moon {
-  z-index: 0;
+  z-index: 10;
   position: absolute;
   border-radius: 120px;
   top: 35px;
@@ -21,6 +50,7 @@
   height: 150px;
   animation: appear 1s ease-in-out;
 }
+
 .moonImg {
   position: absolute;
   height: 270px;
@@ -30,26 +60,10 @@
   margin: 0;
   animation: appear 1s ease-in-out;
 }
-.sun {
-  // @extend .moon;
-  position: absolute;
-  border-radius: 120px;
-  top: 35px;
-  left: 60px;
-  width: 150px;
-  height: 150px;
-  background-color: #feffcd;
-  z-index: 0;
-  animation: disappear 1s ease-in-out;
-}
-.sun-glow {
-  @extend .sun;
-  box-shadow: 0 0 190px 20px white, 0 0 300px #cfbb77;
-  z-index: -1;
-}
+
 .moon-glow {
   @extend .moon;
-  box-shadow: 0 0 190px 20px white, 0 0 300px #010a13;
+  box-shadow: 0 0 190px 100px white, 0 0 300px #010a13;
   z-index: -1;
   opacity: 0.2;
 }
@@ -71,4 +85,136 @@
   transform: scaleY(-1);
   transition: 1s ease-in-out;
   width: 100%;
+}
+
+.flower-wrapper {
+  width: 100%;
+  height: 720px;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  z-index: 0;
+  transform-origin: center bottom;
+}
+
+.flower-stem {
+  position: absolute;
+  bottom: 0;
+  // top:0;
+  left: 740px;
+  width: 7px;
+  background-color: green;
+  z-index: 3;
+  border-radius: 10px 10px 0px 0px;
+  transform-origin: center bottom;
+  // animation: swing 3s infinite ease;
+}
+
+.flower-pollen {
+  position: absolute;
+  left: 65px;
+  bottom: 300px;
+  background: radial-gradient(circle, yellow 20%, black);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  transform-origin: center;
+  animation-fill-mode: forwards;
+  transition-duration: 1s;
+  z-index: 5;
+  visibility: hidden;
+  // &:hover {
+  //   // left: px;
+  //   // bottom: 300px * 1.2;
+  //   height: 80px;
+  //   width: 80px;
+  //   transition-duration: 1s;
+  //   background: radial-gradient(circle, yellow 40%, black);
+  // }
+}
+
+.flower-petal {
+  width: 100px;
+  height: 100px;
+  visibility: hidden;
+  z-index: 4;
+  display: inline-block;
+  // border: 2px solid black;
+}
+
+.top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 0 50px 0 50px;
+  border-right: none;
+  border-bottom: none;
+  background: linear-gradient(to bottom right, #9076e8,  purple, black);
+  transform-origin: bottom right;
+}
+
+.top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 50px 0 50px 0;
+  border-left: none;
+  border-bottom: none;
+  background: linear-gradient(to bottom left, #9076e8,  purple, black);
+  transform-origin: bottom left;
+}
+
+.bottom-right {
+  position: absolute;
+  top: 90px;
+  right: 0;
+  border-radius: 0 50px 0 50px;
+  border-top: none;
+  border-left: none;
+  background: linear-gradient(to top left, #9076e8,  purple, black);
+  transform-origin: top left;
+}
+
+.bottom-left {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  border-radius: 50px 0 50px 0;
+  border-top: none;
+  border-right: none;
+  background: linear-gradient(to top right, #9076e8,  purple, black);
+  transform-origin: top right;
+}
+
+.petal-wrapper {
+  width: 180px;
+  height: 420px;
+  position: absolute;
+  bottom: 0;
+  left: 655px;
+  transform-origin: bottom center;
+  transition-duration: 1s;
+  z-index: 4;
+  &:hover {
+    transition-duration: 1s;
+    transform: scale(1.2);
+    animation-fill-mode: forwards;
+  }
+  &:hover ~ .flower-pollen {
+    left: 705px;
+    bottom: 300px * 1.2;
+    height: 80px;
+    width: 80px;
+    transition-duration: 1s;
+    background: radial-gradient(circle, yellow 40%, black);
+    // transform: scale(1.2);
+  }
+}
+
+.leaf-lettering {
+  position: absolute;
+  bottom: 100px;
+  left: 80px;
+  width: 0;
+  height: 125px;
 }
