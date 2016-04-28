@@ -4,6 +4,7 @@
   100% {
     opacity: 0;
     transform: translate(10px, 10px); } }
+
 @keyframes moveUp {
   0% {
     bottom: 78px; }
@@ -11,6 +12,7 @@
     bottom: 234px; }
   100% {
     bottom: 390px; } }
+
 .projects-tab {
   display: none;
   position: absolute;
@@ -150,5 +152,3 @@ a.project-title, .project-title {
   right: 0;
   left: 50px;
   transform: rotate(135deg); }
-
-/*# sourceMappingURL=projects.css.map */

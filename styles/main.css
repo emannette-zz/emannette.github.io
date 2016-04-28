@@ -2,13 +2,14 @@
   0% {
     opacity: 0; }
   25% {
-    opacity: 0.25; }
+    opacity: .25; }
   50% {
-    opacity: 0.5; }
+    opacity: .5; }
   75% {
-    opacity: 0.75; }
+    opacity: .75; }
   100% {
     opacity: 1; } }
+
 body {
   font-size: 62.5%;
   background-color: #031528;
@@ -119,5 +120,3 @@ a:hover {
 
 .night-profiles {
   animation: appear 1s ease; }
-
-/*# sourceMappingURL=main.css.map */
