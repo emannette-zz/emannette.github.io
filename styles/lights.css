@@ -1,10 +1,17 @@
 @keyframes swing {
   0% {
-    transform: rotate(-0.95deg); }
+    transform: rotate(3deg); }
   50% {
-    transform: rotate(0.95deg); }
+    transform: rotate(-3deg); }
   100% {
-    transform: rotate(-0.95deg); } }
+    transform: rotate(3deg); } }
+@keyframes centerSwing {
+  0% {
+    transform: rotate(15deg); }
+  50% {
+    transform: rotate(-15deg); }
+  100% {
+    transform: rotate(15deg); } }
 @keyframes disappear {
   0% {
     opacity: 1; }
@@ -27,6 +34,33 @@
     opacity: 0.75; }
   100% {
     opacity: 1; } }
+@keyframes growVert {
+  0% {
+    height: 0; }
+  50% {
+    height: 150px; }
+  100% {
+    height: 300px; } }
+@keyframes leafGrow {
+  0% {
+    width: 0;
+    left: 85px; }
+  50% {
+    width: 120px;
+    left: 70px; }
+  100% {
+    width: 200px;
+    left: 60px; } }
+@keyframes growFromCenter {
+  0% {
+    transform: scale(0);
+    visibility: visible; }
+  50% {
+    transform: scale(0.5);
+    visibility: visible; }
+  100% {
+    transform: scale(1);
+    visibility: visible; } }
 html, body {
   font-family: helvetica neue,helvetica,arial,sans-serif;
   font-weight: 200;
@@ -34,7 +68,7 @@ html, body {
 
 .light-switch {
   position: absolute;
-  display: block;
+  display: none;
   left: 85px;
   top: 100px;
   opacity: 0;
@@ -50,8 +84,10 @@ html, body {
     visibility: hidden;
     animation: disappear 1s ease-in-out; }
   .light-switch:checked ~ .sun {
+    visibility: visible;
     animation: appear 1s ease-in-out; }
   .light-switch:checked ~ .sun-glow {
+    visibility: visible;
     animation: appear 1s ease-in-out; }
   .light-switch:checked ~ .header {
     color: black;
@@ -82,24 +118,24 @@ html, body {
     animation: disappear 1s ease-in-out; }
   .light-switch:checked ~ .day-profiles {
     visibility: visible;
-    transition: .2s linear 500ms; }
+    animation: appear 1s ease; }
   .light-switch:checked ~ .night-profiles {
     visibility: hidden;
-    transition: .2s linear 500ms; }
-
-.light-switch-label {
-  position: absolute;
-  display: none;
-  height: 120px;
-  width: 3px;
-  z-index: -1;
-  top: 100px;
-  left: 85px;
-  background-color: #cdcdcd;
-  transform-origin: center top;
-  animation: swing 3s infinite ease-in-out;
-  transition: 0s ease-in-out;
-  z-index: -1; }
+    animation: disappear 1s ease; }
+  .light-switch:checked ~ .flower-wrapper {
+    animation: swing 3s ease-in-out infinite 5.2s; }
+  .light-switch:checked ~ .flower-wrapper .flower-stem {
+    animation: growVert 3s linear 500ms;
+    animation-fill-mode: forwards; }
+  .light-switch:checked ~ .flower-wrapper .flower-pollen {
+    animation: growFromCenter 1s linear 4.2s;
+    animation-fill-mode: forwards; }
+  .light-switch:checked ~ .flower-wrapper .petal-wrapper .flower-petal {
+    animation: growFromCenter 1s linear 3.2s;
+    animation-fill-mode: forwards; }
+  .light-switch:checked ~ .flower-wrapper .petal-wrapper .leaf-lettering {
+    animation: leafGrow 1s linear 3s;
+    animation-fill-mode: forwards; }
 
 .background {
   position: absolute;
@@ -111,4 +147,4 @@ html, body {
   z-index: -3;
   transition: 0.2s ease-in-out 500ms; }
 
-/*# sourceMappingURL=experimental.css.map */
+/*# sourceMappingURL=lights.css.map */
