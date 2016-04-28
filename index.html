@@ -6,23 +6,15 @@
     <title>Ethan Mannette</title>
 
     <link rel="stylesheet" type="text/css" href="styles/main.css" />
-    <link rel="stylesheet" type="text/css" href="styles/lights.css" />
     <link rel="stylesheet" type="text/css" href="styles/terrain.css" />
     <link rel="stylesheet" type="text/css" href="styles/projects.css" />
+    <link rel="stylesheet" type="text/css" href="styles/lights.css" />
   </head>
   <body>
 
     <div class="main-wrap">
 
 
-      <!-- EXPERIMENTAL -->
-      <!-- <input type="checkbox" id="light-switch" class="light-switch"/>
-      <label for="light-switch" id="light-switch-label" class="light-switch-label">
-        <div class="screw"></div>
-        <div class="switch"></div>
-        <div class="screw"></div>
-      </label> -->
-      <!-- <div id="background" class="background"></div> -->
       <input type="checkbox" id="lightSwitch" class="light-switch" />
 
       <input type="checkbox" id="projectsTab" class="projects-tab" />
@@ -35,37 +27,29 @@
       <div id="moonGlow" class="moon-glow"></div>
 
 
-      <label for="lightSwtich" id="lightSwitchLabel" class="light-switch-label"></label>
-      <label for="projectsTab" class="projects-tab-label">
-        Projects
-      </label>
-
-      <div id="stem" class="flower-stem"></div>
-      <div id="pollen" class="flower-pollen"></div>
-      <div id="petal" class="flower-petal top-left"></div>
-      <div id="petal" class="flower-petal top-right"></div>
-      <div id="petal" class="flower-petal bottom-right"></div>
-      <div id="petal" class="flower-petal bottom-left"></div>
+      <div id="flowerWrapper" class="flower-wrapper">
+        <div id="stem" class="flower-stem"></div>
+        <div id="petalWrapper" class="petal-wrapper">
+          <div id="pollen" class="flower-pollen"></div>
+          <!-- <div id="petal" class="flower-petal top-center"></div> -->
+          <!-- <div id="petal" class="flower-petal bottom-center"></div>
+          <div id="petal" class="flower-petal left-center"></div>
+          <div id="petal" class="flower-petal right-center"></div> -->
+          <div id="petal" class="flower-petal top-left"></div>
+          <div id="petal" class="flower-petal top-right"></div>
+          <div id="petal" class="flower-petal bottom-right"></div>
+          <div id="petal" class="flower-petal bottom-left"></div>
+          <img id="leaf lettering" class="leaf-lettering" src="images/projectsLettering.png" />
+        </div>
+      </div>
 
       <canvas id="grass" class="grass"></canvas>
       <canvas id="roots" class="roots"></canvas>
 
 
-
       <header class="section header">
         <h1>Ethan Mannette</h1>
         <h3 class="label">Software Developer</h3>
-
-
-        <!-- <div class="buttonWrap">
-          <button id="contactButton" class="button contactButton">Contact</button>
-        </div>
-        <div class="buttonWrap">
-          <button id="aboutButton" class="button aboutButton">About</button>
-        </div>
-        <div class="buttonWrap">
-          <button id="projectsButton" class="button projectsButton">Projects</button>
-        </div> -->
       </header>
 
       <section id="contact" class="section contact">
@@ -118,50 +102,48 @@
 
       <section id="projectsContainer" class="container projects-container">
 
-        <div class="project-image project-content">
+        <div id="endlessRunner" class="project-image project-content">
           <a class="project-title" href="https://endless3drunner.herokuapp.com/#/" target="_blank">3D Runner</a>
           <a href="https://endless3drunner.herokuapp.com/#/" target="_blank"><img class="screenshot" src="images/3d-runner.png" /></a>
           <span class="description"></span>
           <span class="tech-notes"></span>
         </div>
-        <div class="project-image project-content">
+        <div id="marioQuiz" class="project-image project-content">
           <a class="project-title" href="http://emannette.github.io/gschool_front-end-personal-project/" target="_blank">Mario Quiz Racer</a>
           <a href="http://emannette.github.io/gschool_front-end-personal-project/" target="_blank"><img class="screenshot" src="images/marioQuiz.png" /></a>
           <span class="description"></span>
           <span class="tech-notes"></span>
         </div>
-        <div class="project-image project-content">
-          <a class="project-title" href="http://emannette.github.io/canvas-fibStuff/" target="_blank">Fun With Fibonacci</a>
+        <div id="fibonacci" class="project-image project-content">
+          <a class="project-title" href="http://emannette.github.io/canvas-fibStuff/" target="_blank">Fibonacci</a>
           <a href="http://emannette.github.io/canvas-fibStuff/" target="_blank"><img class="screenshot" src="images/funWithCanvas.png" /></a>
           <span class="description"></span>
           <span class="tech-notes"></span>
         </div>
-        <div class="project-image project-content">
+        <div id="fractals" class="project-image project-content">
           <a class="project-title" href="http://emannette.github.io/canvas-fractals/" target="_blank">Canvas Fractals</a>
           <a href="http://emannette.github.io/canvas-fractals/" target="_blank"><img class="screenshot" src="images/canvasFractals.png" /></a>
           <span class="description"></span>
           <span class="tech-notes"></span>
         </div>
-        <div class="project-image project-content">
+        <div id="gitStats" class="project-image project-content">
           <span class="project-title">Git Stats</span>
           <img class="screenshot" src="images/githubStats.png" />
           <span class="description"></span>
           <span class="tech-notes"></span>
         </div>
-        <div class="project-image project-content">
+        <div id="translator" class="project-image project-content">
           <span class="project-title">Translator Quiz</span>
           <img class="screenshot" src="images/translatorQuiz.png" />
           <span class="description"></span>
           <span class="tech-notes"></span>
         </div>
-        <div class="project-image project-content">
+        <!-- <div id="roulette" class="project-image project-content">
           <span class="project-title">Roulette</span>
           <img class="screenshot" src="images/error.png" />
           <span class="description"></span>
           <span class="tech-notes"></span>
-        </div>
-
-        <!-- <canvas id="roots" class="roots"></canvas> -->
+        </div> -->
 
         <div class="projects-scroll-right scroll">
         </div>
