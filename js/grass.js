@@ -77,8 +77,6 @@
   moon.addEventListener('click', function() {
     cancelAnimation();
   });
-  lightSwitch.addEventListener('click', function() {
-    cancelAnimation();
-  });
+
 
 })();
