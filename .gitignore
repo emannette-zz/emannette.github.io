@@ -4,3 +4,4 @@ extFiles/
 *.css.map
 .sass-cache
 *.todo
+npm-debug.log
