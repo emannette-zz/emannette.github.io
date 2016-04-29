@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/emannette/emannette.github.io#readme",
   "devDependencies": {
+    "browser-sync": "^2.12.5",
     "connect-livereload": "^0.5.4",
     "gulp-jshint": "^2.0.0",
     "gulp-nodemon": "^2.0.6",
