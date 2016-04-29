@@ -1,0 +1,26 @@
+{
+  "name": "ethans-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emannette/emannette.github.io.git"
+  },
+  "author": "Ethan Mannette <ethanmannette@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emannette/emannette.github.io/issues"
+  },
+  "homepage": "https://github.com/emannette/emannette.github.io#readme",
+  "devDependencies": {
+    "connect-livereload": "^0.5.4",
+    "gulp-jshint": "^2.0.0",
+    "gulp-nodemon": "^2.0.6",
+    "jshint": "^2.9.2",
+    "tiny-lr": "^0.2.1"
+  }
+}
