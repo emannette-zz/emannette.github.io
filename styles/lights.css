@@ -106,20 +106,6 @@ html, body {
     transition: 0.2s ease-in-out 500ms; }
   .light-switch:checked ~ .profiles {
     transition: 0.2s ease-in-out 500ms; }
-  .light-switch:checked ~ .projects-tab {
-    visibility: visible;
-    height: 50px;
-    transition-property: all;
-    transition-delay: 550ms;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
-  .light-switch:checked ~ .projects-tab-label {
-    visibility: visible;
-    height: 50px;
-    transition-property: all;
-    transition-delay: 550ms;
-    transition-duration: .5s;
-    transition-timing-function: cubic-bezier(0, 1, 0.5, 1); }
   .light-switch:checked ~ .about {
     visibility: hidden;
     animation: disappear 1s ease-in-out; }
@@ -130,18 +116,18 @@ html, body {
     visibility: hidden;
     animation: disappear 1s ease; }
   .light-switch:checked ~ .flower-wrapper {
-    animation: swing 3s ease-in-out infinite 5.2s; }
+    animation: swing 3000ms ease-in-out infinite; }
   .light-switch:checked ~ .flower-wrapper .flower-stem {
-    animation: growVert 3s linear 500ms;
+    animation: growVert 1500ms linear 500ms;
     animation-fill-mode: forwards; }
   .light-switch:checked ~ .flower-wrapper .flower-pollen {
-    animation: growFromCenter 1s linear 4.2s;
+    animation: growFromCenter 1000ms linear 2700ms;
     animation-fill-mode: forwards; }
   .light-switch:checked ~ .flower-wrapper .petal-wrapper .flower-petal {
-    animation: growFromCenter 1s linear 3.2s;
+    animation: growFromCenter 1000ms linear 1700ms;
     animation-fill-mode: forwards; }
   .light-switch:checked ~ .flower-wrapper .petal-wrapper .leaf-lettering {
-    animation: leafGrow 1s linear 3s;
+    animation: leafGrow 1000ms linear 1500ms;
     animation-fill-mode: forwards; }
 
 .background {
