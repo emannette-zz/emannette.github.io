@@ -20,10 +20,9 @@
     ctx.fillRect(0, 0, w, h);
     stack.forEach(function(el) {
       el();
-    })
+    });
     animation = window.requestAnimationFrame(draw);
-  }
-  // var animation = window.requestAnimationFrame(draw);
+  };
 
 
   var anim = function() {
@@ -35,7 +34,7 @@
         speed    = Math.random() * 2,
         c        = function(l, u) {
       return Math.round( Math.random() * (u||127) + l||0);
-    }
+    };
     var color =
     'rgb('+c(60, 10)+','+c(201, 50)+','+c(120, 50)+')';
     return function() {
@@ -45,7 +44,7 @@
           x        += speed;
       ctx.save();
       ctx.strokeWidth = 10;
-      ctx.translate(w/2 + position, h)
+      ctx.translate(w/2 + position, h);
       if(document.getElementById('lightSwitch').checked === true) {
         ctx.fillStyle = color;
       } else {
@@ -57,7 +56,7 @@
       ctx.quadraticCurveTo(size, -tall/2, size, 0);
       ctx.fill();
       ctx.restore();
-    }
+    };
   };
   for(var x = 0; x < 300; x++) {
     stack.push(anim());
@@ -69,7 +68,7 @@
   var cancelAnimation = function() {
     window.cancelAnimationFrame(animation);
     setTimeout(draw, 500);
-  }
+  };
 
   sun.addEventListener('click', function() {
     cancelAnimation();
