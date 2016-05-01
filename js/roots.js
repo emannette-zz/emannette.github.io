@@ -12,7 +12,7 @@
   var draw = function() {
     ctx.fillStyle = '#786e4a';
     ctx.fillRect(0, 0, w, h);
-  }
+  };
 
   var roots = function(startX, startY, rootWidth, level) {
 
@@ -50,19 +50,19 @@
       roots(topLeftX, topLeftY, rootWidth * 0.5, level + 1);
     }
     // console.log('drawing roots!');
-  }
+  };
 
   var createRoots = function() {
     for (var i = 0; i < 30; i++) {
       var randomRoot = Math.random() * w;
       roots(randomRoot, h + 7, 4, 0);
     }
-  }
+  };
 
   var drawRoots = function() {
     draw();
-    createRoots()
-  }
+    createRoots();
+  };
 
   drawRoots();
 
