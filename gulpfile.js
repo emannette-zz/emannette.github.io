@@ -53,13 +53,13 @@ gulp.task('lint', function() {
 });
 
 gulp.task('sass', function() {
-  return gulp.src('paths.styles')
+  return gulp.src(paths.styles)
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('styles'));
 });
 
 gulp.task('watch', function() {
-  gulp.watch('paths.styles',  ['sass'] );
+  gulp.watch(paths.styles,  ['sass'] );
   gulp.watch(paths.scripts, ['lint']   );
 });
 
