@@ -140,3 +140,8 @@ a.project-title, .project-title {
 .projects-scroll-left {
   left: 50px;
   transform: rotate(135deg); }
+
+.description {
+  position: absolute;
+  left: 500px;
+  top: 0; }
