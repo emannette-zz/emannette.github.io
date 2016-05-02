@@ -98,7 +98,7 @@ $(document).ready(function(){
       case 0:
         $('#endlessRunner')
           .css('opacity', '1')
-          .css('transition-duration', '200ms')
+          .css('transition-duration', '2000ms')
           .css('transition-timing-function', 'ease');
         $('#marioQuiz')
           .css('opacity', '0')
@@ -201,26 +201,20 @@ $(document).ready(function(){
   $('.projects-scroll-right')
     .click(function() {
       var pos = $('#projectsContainer').scrollLeft();
-      // console.log('position before scroll = ' + pos);
       $('#projectsContainer').animate({
         scrollLeft: pos += window.innerWidth + 200
       }, 800);
-      // console.log('position after scroll = ' + pos);
       projectVisibilityRight(pos);
-      // console.log(pos);
   });
 
 
   $('.projects-scroll-left')
     .click(function() {
       var pos = $('#projectsContainer').scrollLeft();
-      // console.log('position before scroll = ' + pos);
       $('#projectsContainer').animate({
         scrollLeft: pos -= window.innerWidth + 200
       }, 800);
-      // console.log('position after scroll = ' + pos);
       projectVisibilityLeft(pos);
-      // console.log(pos);
   });
 
 
@@ -231,7 +225,6 @@ $(document).ready(function(){
     if($('#projectsTab').is(':checked')) {
       $('#endlessRunner')
         .css('opacity', '1')
-        .css('transition-delay', '2s')
         .css('transition-duration', '1s');
       $('#scrollLeft')
         .css('opacity', '0');
