@@ -167,7 +167,6 @@ $(document).ready(function(){
   };
 
 
-
   $('#moon')
     .click(function() {
       $('#lightSwitch').trigger('click');
@@ -220,12 +219,12 @@ $(document).ready(function(){
 
   $('#projectsTab')
     .click(function() {
-      $('#sun').css('transition-duration', '2s');
-      $('#sunGlow').css('transition-duration', '2s');
+      $('#sun').css('transition-duration', '2000ms');
+      $('#sunGlow').css('transition-duration', '2000ms');
     if($('#projectsTab').is(':checked')) {
       $('#endlessRunner')
         .css('opacity', '1')
-        .css('transition-duration', '1s');
+        .css('transition-duration', '1000ms');
       $('#scrollLeft')
         .css('opacity', '0');
     } else {
