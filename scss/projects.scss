@@ -1,4 +1,3 @@
-// transition-delay: .5s;
 @keyframes arrow {
   0% {
     opacity: 1;
@@ -8,6 +7,7 @@
     transform: translate(10px, 10px);
   }
 }
+
 @keyframes moveUp {
   from  { bottom: -100px; }
   to    { bottom: 150px; }
@@ -37,20 +37,19 @@
   }
   &:checked ~ .projects-container {
     visibility: visible;
-    // transition-property: all;
-    transition-duration: 2s;
+    transition-duration: 2000ms;
     transition-timing-function: ease-in-out;
     height: 400px;
   }
   &:checked ~ .grass {
     bottom: 400px;
-    transition-duration: 2s;
+    transition-duration: 2000ms;
     transition-timing-function: ease-in-out;
   }
   &:checked ~ .projects-tab-label {
-    transition-delay: .5s;
+    transition-delay: 500ms;
     transition-property: all;
-    transition-duration: 2s;
+    transition-duration: 2000ms;
     transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
     bottom: 380px;
     &:hover {
@@ -63,14 +62,14 @@
   }
   &:checked ~ .sun {
     top: -300px;
-    transition-duration: 1.7s;
+    transition-duration: 1700ms;
   }
   &:checked ~ .sun-glow {
     top: -300px;
-    transition-duration: 1.7s;
+    transition-duration: 1700ms;
   }
   &:checked ~ .roots {
-    transition-duration: 2s;
+    transition-duration: 2000ms;
     transition-timing-function: ease-in-out;
     bottom: 0;
   }
@@ -90,7 +89,7 @@
   left: 0;
   bottom: 0;
   transition-property: all;
-  transition-duration: 1s;
+  transition-duration: 1000ms;
   transition-timing-function: ease-in-out;
   z-index: 2;
   white-space: nowrap;
@@ -108,7 +107,7 @@
   }
 }
 
-a.project-title {
+.project-title {
   display: block;
   position: absolute;
   top: 100px;
@@ -120,16 +119,13 @@ a.project-title {
   background-color: black;
   padding: 0 10px 0 10px;
 }
-.project-title {
-  @extend a.project-title;
-}
 
 .screenshot {
   height: 200px;
   width: 300px;
   border-radius: 15px;
   box-shadow: 4px 4px 10px 10px #2b2b2b;
-  transition-duration: 1s;
+  transition-duration: 1000ms;
   &:hover {
     height: 210px;
     width: 310px;
@@ -161,7 +157,7 @@ a.project-title {
     border-top: none;
     border-right: 2px #fff solid;
     border-bottom: 2px #fff solid;
-    animation-duration: 2s;
+    animation-duration: 2000ms;
     animation-iteration-count: infinite;
     animation-name: arrow;
   }
@@ -206,7 +202,6 @@ a.project-title {
     margin: 0;
     padding-left: 10px;
     position: relative;
-    // columns: 2;
     list-style-position: inside;
     li {
       list-style: none;
