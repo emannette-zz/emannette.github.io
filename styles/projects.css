@@ -144,12 +144,14 @@ a.project-title, .project-title {
 .project-description-wrapper {
   display: inline-block;
   position: relative;
-  top: 0;
-  left: 25px; }
+  top: -75px;
+  left: 50px;
+  width: 500px; }
 
 .project-description {
   position: relative;
   display: inline-block;
+  float: left;
   left: 50px;
   top: 0;
   font-weight: 500;
