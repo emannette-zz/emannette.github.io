@@ -5,4 +5,4 @@ extFiles/
 .sass-cache
 *.todo
 npm-debug.log
-node-modules
+node_modules
