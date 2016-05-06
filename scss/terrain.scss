@@ -1,29 +1,59 @@
-@keyframes disappear {
+@mixin keyframes($anim) {
+  @-webkit-keyframes #{$anim} {
+    @content;
+  }
+  @-moz-keyframes #{$anim} {
+    @content;
+  }
+  @-o-keyframes #{$anim} {
+    @content;
+  }
+  @keyframes #{$anim} {
+    @content;
+  }
+}
+
+@mixin animation($name, $duration, $iteration, $fill, $timing) {
+  animation-name: $name;
+  animation-duration: $duration;
+  animation-iteration-count: $iteration;
+  animation-fill-mode: $fill;
+  animation-timing-function: $timing;
+}
+
+@include keyframes(disappear) {
   0%   { opacity: 1   }
   50%  { opacity: .5  }
   100% { opacity: 0   }
 }
-@keyframes appear {
+
+@include keyframes(appear) {
   0%   { opacity: 0   }
   25%  { opacity: .25 }
   50%  { opacity: .5  }
   75%  { opacity: .75 }
   100% { opacity: 1   }
 }
-// @keyframes swing {
-//   0%   { transform: rotate(-5deg); }
-//   50%  { transform: rotate(5deg );  }
-//   100% { transform: rotate(-5deg); }
-// }
-@keyframes grow {
+
+@include keyframes(grow) {
   0%   { height: 0 }
   50%  { height: 150px }
   100% { height: 300px }
 }
 
+@include keyframes(shrinkFlower) {
+  from { transform: scale(1)   }
+  to   { transform: scale(0.5) }
+}
+
+@include keyframes(shrinkOnHover) {
+  from { transform: scale(0.5) }
+  to   { transform: scale(0.2) }
+}
+
 .sun {
   // @extend .moon;
-  animation: disappear 1s ease-in-out;
+  animation: disappear 1000ms ease-in-out;
   position: absolute;
   top: 35px;
   left: 60px;
@@ -48,7 +78,7 @@
   left: 60px;
   width: 150px;
   height: 150px;
-  animation: appear 1s ease-in-out;
+  animation: appear 1000ms ease-in-out;
 }
 
 .moonImg {
@@ -58,7 +88,7 @@
   top: -55px;
   left: -63px;
   margin: 0;
-  animation: appear 1s ease-in-out;
+  animation: appear 1000ms ease-in-out;
 }
 
 .moon-glow {
@@ -74,7 +104,7 @@
   left: 0;
   bottom: 0;
   z-index: -2;
-  transition: 1s ease-in-out;
+  transition: 1000ms ease-in-out;
   overflow: hidden;
 }
 
@@ -83,7 +113,7 @@
   bottom: -400px;
   left: 0;
   transform: scaleY(-1);
-  transition: 1s ease-in-out;
+  transition: 1000ms ease-in-out;
   width: 100%;
 }
 
@@ -100,14 +130,12 @@
 .flower-stem {
   position: absolute;
   bottom: 0;
-  // top:0;
   left: 740px;
   width: 7px;
   background: linear-gradient(to bottom, #153812, green 60%);
   z-index: 3;
   border-radius: 10px 10px 0px 0px;
   transform-origin: center bottom;
-  // animation: swing 3s infinite ease;
 }
 
 .flower-pollen {
@@ -120,17 +148,9 @@
   height: 50px;
   transform-origin: center;
   animation-fill-mode: forwards;
-  transition-duration: 1s;
+  transition-duration: 1000ms;
   z-index: 5;
   visibility: hidden;
-  // &:hover {
-  //   // left: px;
-  //   // bottom: 300px * 1.2;
-  //   height: 80px;
-  //   width: 80px;
-  //   transition-duration: 1s;
-  //   background: radial-gradient(circle, yellow 40%, black);
-  // }
 }
 
 .flower-petal {
@@ -139,7 +159,6 @@
   visibility: hidden;
   z-index: 4;
   display: inline-block;
-  // border: 2px solid black;
 }
 
 .top-left {
@@ -193,10 +212,10 @@
   bottom: 0;
   left: 655px;
   transform-origin: bottom center;
-  transition-duration: 1s;
+  transition-duration: 1000ms;
   z-index: 4;
   &:hover {
-    transition-duration: 1s;
+    transition-duration: 1000ms;
     transform: scale(1.2);
     animation-fill-mode: forwards;
   }
@@ -205,9 +224,8 @@
     bottom: 300px * 1.2;
     height: 80px;
     width: 80px;
-    transition-duration: 1s;
+    transition-duration: 1000ms;
     background: radial-gradient(circle, yellow 40%, black);
-    // transform: scale(1.2);
   }
 }
 
@@ -217,4 +235,25 @@
   left: 80px;
   width: 0;
   height: 125px;
+}
+
+.projects-tab {
+  &:checked ~ .flower-wrapper .petal-wrapper {
+    // transform: scale(0.5);
+    // transition-duration: 800ms;
+    // transition-timing-function: linear;
+    @include animation(shrinkFlower, 800ms, null, forwards, linear);
+    &:hover {
+      // transform: scale(0.2);
+      // transition-duration: 1200ms;
+      // transition-timing-function: ease-out;
+    @include animation(shrinkOnHover, 1200ms, infinite, forwards, ease-out);
+    }
+  //   &:hover .flower-stem {
+  //
+  //   }
+  }
+  &:checked ~ .flower-wrapper .flower-stem {
+    @include animation(shrinkFlower, 800ms, null, forwards, linear);
+  }
 }

@@ -1,3 +1,27 @@
+@-webkit-keyframes disappear {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: .5; }
+  100% {
+    opacity: 0; } }
+
+@-moz-keyframes disappear {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: .5; }
+  100% {
+    opacity: 0; } }
+
+@-o-keyframes disappear {
+  0% {
+    opacity: 1; }
+  50% {
+    opacity: .5; }
+  100% {
+    opacity: 0; } }
+
 @keyframes disappear {
   0% {
     opacity: 1; }
@@ -5,6 +29,42 @@
     opacity: .5; }
   100% {
     opacity: 0; } }
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: .25; }
+  50% {
+    opacity: .5; }
+  75% {
+    opacity: .75; }
+  100% {
+    opacity: 1; } }
+
+@-moz-keyframes appear {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: .25; }
+  50% {
+    opacity: .5; }
+  75% {
+    opacity: .75; }
+  100% {
+    opacity: 1; } }
+
+@-o-keyframes appear {
+  0% {
+    opacity: 0; }
+  25% {
+    opacity: .25; }
+  50% {
+    opacity: .5; }
+  75% {
+    opacity: .75; }
+  100% {
+    opacity: 1; } }
 
 @keyframes appear {
   0% {
@@ -18,6 +78,30 @@
   100% {
     opacity: 1; } }
 
+@-webkit-keyframes grow {
+  0% {
+    height: 0; }
+  50% {
+    height: 150px; }
+  100% {
+    height: 300px; } }
+
+@-moz-keyframes grow {
+  0% {
+    height: 0; }
+  50% {
+    height: 150px; }
+  100% {
+    height: 300px; } }
+
+@-o-keyframes grow {
+  0% {
+    height: 0; }
+  50% {
+    height: 150px; }
+  100% {
+    height: 300px; } }
+
 @keyframes grow {
   0% {
     height: 0; }
@@ -26,8 +110,56 @@
   100% {
     height: 300px; } }
 
+@-webkit-keyframes shrinkFlower {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(0.5); } }
+
+@-moz-keyframes shrinkFlower {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(0.5); } }
+
+@-o-keyframes shrinkFlower {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(0.5); } }
+
+@keyframes shrinkFlower {
+  from {
+    transform: scale(1); }
+  to {
+    transform: scale(0.5); } }
+
+@-webkit-keyframes shrinkOnHover {
+  from {
+    transform: scale(0.5); }
+  to {
+    transform: scale(0.2); } }
+
+@-moz-keyframes shrinkOnHover {
+  from {
+    transform: scale(0.5); }
+  to {
+    transform: scale(0.2); } }
+
+@-o-keyframes shrinkOnHover {
+  from {
+    transform: scale(0.5); }
+  to {
+    transform: scale(0.2); } }
+
+@keyframes shrinkOnHover {
+  from {
+    transform: scale(0.5); }
+  to {
+    transform: scale(0.2); } }
+
 .sun, .sun-glow {
-  animation: disappear 1s ease-in-out;
+  animation: disappear 1000ms ease-in-out;
   position: absolute;
   top: 35px;
   left: 60px;
@@ -49,7 +181,7 @@
   left: 60px;
   width: 150px;
   height: 150px;
-  animation: appear 1s ease-in-out; }
+  animation: appear 1000ms ease-in-out; }
 
 .moonImg {
   position: absolute;
@@ -58,7 +190,7 @@
   top: -55px;
   left: -63px;
   margin: 0;
-  animation: appear 1s ease-in-out; }
+  animation: appear 1000ms ease-in-out; }
 
 .moon-glow {
   box-shadow: 0 0 190px 100px white, 0 0 300px #010a13;
@@ -71,7 +203,7 @@
   left: 0;
   bottom: 0;
   z-index: -2;
-  transition: 1s ease-in-out;
+  transition: 1000ms ease-in-out;
   overflow: hidden; }
 
 .roots {
@@ -79,7 +211,7 @@
   bottom: -400px;
   left: 0;
   transform: scaleY(-1);
-  transition: 1s ease-in-out;
+  transition: 1000ms ease-in-out;
   width: 100%; }
 
 .flower-wrapper {
@@ -111,7 +243,7 @@
   height: 50px;
   transform-origin: center;
   animation-fill-mode: forwards;
-  transition-duration: 1s;
+  transition-duration: 1000ms;
   z-index: 5;
   visibility: hidden; }
 
@@ -169,10 +301,10 @@
   bottom: 0;
   left: 655px;
   transform-origin: bottom center;
-  transition-duration: 1s;
+  transition-duration: 1000ms;
   z-index: 4; }
   .petal-wrapper:hover {
-    transition-duration: 1s;
+    transition-duration: 1000ms;
     transform: scale(1.2);
     animation-fill-mode: forwards; }
   .petal-wrapper:hover ~ .flower-pollen {
@@ -180,7 +312,7 @@
     bottom: 360px;
     height: 80px;
     width: 80px;
-    transition-duration: 1s;
+    transition-duration: 1000ms;
     background: radial-gradient(circle, yellow 40%, black); }
 
 .leaf-lettering {
@@ -189,3 +321,21 @@
   left: 80px;
   width: 0;
   height: 125px; }
+
+.projects-tab:checked ~ .flower-wrapper .petal-wrapper {
+  animation-name: shrinkFlower;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear; }
+  .projects-tab:checked ~ .flower-wrapper .petal-wrapper:hover {
+    animation-name: shrinkOnHover;
+    animation-duration: 1200ms;
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out; }
+
+.projects-tab:checked ~ .flower-wrapper .flower-stem {
+  animation-name: shrinkFlower;
+  animation-duration: 800ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear; }
