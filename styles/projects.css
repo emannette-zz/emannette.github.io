@@ -61,6 +61,10 @@
     transition-duration: 2s;
     transition-timing-function: ease-in-out;
     bottom: 0; }
+  .projects-tab:checked ~ .flower-wrapper {
+    bottom: 390px;
+    transition-duration: 2000ms;
+    transition-timing-function: ease-in-out; }
 
 .projects-container {
   visibility: hidden;

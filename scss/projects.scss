@@ -74,6 +74,11 @@
     transition-timing-function: ease-in-out;
     bottom: 0;
   }
+  &:checked ~ .flower-wrapper {
+    bottom: 390px;
+    transition-duration: 2000ms;
+    transition-timing-function: ease-in-out;
+  }
 }
 
 
