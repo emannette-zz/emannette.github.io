@@ -13,6 +13,14 @@
   }
 }
 
+@mixin transform($args...) {
+  -webkit-transform: $args;
+     -moz-transform: $args;
+      -ms-transform: $args;
+       -o-transform: $args;
+          transform: $args;
+}
+
 @mixin animation($name, $duration, $iteration, $fill, $timing) {
   animation-name: $name;
   animation-duration: $duration;
@@ -42,13 +50,13 @@
 }
 
 @include keyframes(shrinkFlower) {
-  from { transform: scale(1)   }
-  to   { transform: scale(0.5) }
+  from { @include transform(scale(1))   }
+  to   { @include transform(scale(0.5)) }
 }
 
 @include keyframes(shrinkOnHover) {
-  from { transform: scale(0.5) }
-  to   { transform: scale(0.2) }
+  from { @include transform(scale(0.5)) }
+  to   { @include transform(scale(0.2)) }
 }
 
 .sun {
@@ -238,21 +246,13 @@
 
 .projects-tab {
   &:checked ~ .flower-wrapper .petal-wrapper {
-    // transform: scale(0.5);
-    // transition-duration: 800ms;
-    // transition-timing-function: linear;
     @include animation(shrinkFlower, 800ms, null, forwards, linear);
     &:hover {
-      // transform: scale(0.2);
-      // transition-duration: 1200ms;
-      // transition-timing-function: ease-out;
-    @include animation(shrinkOnHover, 1200ms, infinite, forwards, ease-out);
+    @include animation(shrinkOnHover, 1500ms, infinite, forwards, ease);
     }
-  //   &:hover .flower-stem {
-  //
-  //   }
   }
   &:checked ~ .flower-wrapper .flower-stem {
-    @include animation(shrinkFlower, 800ms, null, forwards, linear);
+    // @include animation(shrinkFlower, 800ms, null, forwards, linear);
+    height: 150px;
   }
 }
