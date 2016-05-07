@@ -3,48 +3,47 @@
 var gulp = require('gulp'),
     sass = require('gulp-sass'),
     jshint = require('gulp-jshint'),
-    browserSync = require('browser-sync'),
-    reload = browserSync.reload,
-    nodemon = require('gulp-nodemon');
+    tinylr;
 
 var paths = {
   scripts: [
     './js/*.js'
   ],
   styles: [
-    './scss/*.scss'
+    './scss/app.scss'
+  ],
+  html: [
+    './*.html'
+  ],
+  css: [
+    './styles/*.css'
   ]
 };
 
-var nodemonConfig = {
-  ext: 'html js css',
-  ignore: ['node_modules']
-};
-
-gulp.task('nodemon', function(cb) {
-  var called = false;
-  return nodemon(nodemonConfig)
-    .on('start', function() {
-      if (!called) {
-        called = true;
-        cb();
-      }
-    })
-    .on('restart', function() {
-      setTimeout(function() {
-        reload({ stream: false });
-      }, 1000);
-    });
+gulp.task('express', function() {
+  var express = require('express');
+  var app = express();
+  app.use(require('connect-livereload')({
+    port: 35729
+  }));
+  app.use(express.static(__dirname));
+  app.listen(3000, '0.0.0.0')
 });
 
-gulp.task('browser-sync', ['nodemon'], function(done) {
-  browserSync({
-    proxy: 'localhost:3000',
-    port: 5000,
-    files:  ['.{js, css}'],
-    notify: true
-  }, done);
+gulp.task('livereload', function() {
+  tinylr = require('tiny-lr')();
+  tinylr.listen(35729);
 });
+
+var notifyLiveReload = function(event) {
+  var fileName = require('path').relative(__dirname, event.path);
+
+  tinylr.changed({
+    body: {
+      files: [fileName]
+    }
+  });
+}
 
 gulp.task('lint', function() {
   return gulp.src(paths.scripts)
@@ -59,8 +58,12 @@ gulp.task('sass', function() {
 });
 
 gulp.task('watch', function() {
+  gulp.watch('./scss/_partials/*.scss', ['sass']);
   gulp.watch(paths.styles,  ['sass'] );
-  gulp.watch(paths.scripts, ['lint']   );
+  gulp.watch(paths.scripts, ['lint'] );
+  gulp.watch(paths.html, notifyLiveReload);
+  gulp.watch(paths.css,  notifyLiveReload);
+
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['express', 'livereload', 'watch']);
